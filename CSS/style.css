@@ -1,0 +1,487 @@
+/* Reseteo básico y box-sizing */
+* { /* El selector universal (*) aplica estos estilos a todos los elementos */
+    box-sizing: border-box; /* El ancho y alto de los elementos ahora incluye el padding y el borde */
+    padding: 0; /* Elimina el padding por defecto de los elementos */
+}
+/* Paleta y body*/
+:root{
+    --bg-main:#28006b;
+    --bg-secondary:#44056b;
+    --nav-bg:#5f0074;
+    --accent:#d90081;
+    --accent2:#a11191;
+    --light:#ffffff;
+    --shadow:rgba(0,0,0,0.25);
+    --card:#3a005a;
+    --soft:#f2e7ff;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+    font-family:"Delius", sans-serif;
+    background:var(--bg-main);
+    color:var(--light);
+    line-height:1.6;
+}
+
+footer{
+    background-color: #28006b; /* Color de fondo específico para el pie de página */
+}
+
+/* Estilos para la barra de navegación */
+nav{
+    background:var(--nav-bg);
+    padding:12px 20px;
+    border-radius:14px;
+    margin:1rem auto 2rem auto;
+    max-width:1100px;
+    box-shadow:0 4px 14px var(--shadow);
+}
+.menu{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+}
+.menu li{
+    list-style:none;
+    padding:10px 12px;
+}
+.menu a{
+    color:var(--light);
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+    font-size: 20px;
+}
+.menu a:hover{
+    color:var(--accent);
+}
+.logo img{
+    height:70px;
+    filter:drop-shadow(0 2px 4px var(--shadow));
+}
+.login-link {margin-right: 20px; 
+}
+.toggle{display:none}
+
+/* Estilos para las listas no ordenadas (usadas en el menú) */
+ul{
+    list-style-type: none; /* Elimina los puntos de la lista */
+}
+
+/* Estilos generales para los enlaces */
+a{
+    color: white; /* Color del texto del enlace */
+    text-decoration: none; /* Elimina el subrayado por defecto */
+}
+
+/* Estilo para el enlace al pasar el cursor sobre él */
+a:hover{
+    text-decoration: underline; /* Añade un subrayado al pasar el cursor */
+}
+
+/* Estilos específicos para el logo */
+.logo img{
+    height: 80px; /* Altura de la imagen del logo */
+    justify-content: center; /* Centra el contenido horizontalmente (en un contenedor flex) */
+    align-items: center; /* Centra el contenido verticalmente (en un contenedor flex) */
+}
+
+/* Evita que el enlace del logo se subraye al pasar el cursor */
+.logo a:hover{
+    text-decoration: none;
+}
+
+/* Estilos para los elementos del menú */
+.menu li{
+    font-size: 16px; /* Tamaño de la fuente */
+    padding: 15px 5px; /* Relleno interior */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
+
+/* Tamaño de fuente para el enlace del logo y el ícono del menú hamburguesa */
+.logo a,
+.toggle a{
+    font-size: 20px;
+}
+
+/* Estilo para el botón secundario (Sign Up) en el menú */
+.button.secondary{
+    border-bottom: 1px #444 solid; /* Borde inferior para separarlo en la vista móvil */
+}
+
+/* Estilos para el contenido principal */
+main{
+    padding: 2rem; /* Relleno interior */
+    max-width: 1000px; /* Ancho máximo del contenido */
+    margin: 0 auto; /* Centra el contenido horizontalmente */
+    text-align: center; /* Centra el texto dentro del main */
+    font-family: "Delius", sans-serif; /* Fuente específica para el main */
+}
+
+/* Estilos para las secciones dentro del main */
+section{
+    margin-bottom: 2rem; /* Espacio inferior para separar secciones */
+}
+
+h1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 3rem; /* Tamaño de fuente grande para el título principal */
+    color: #d90081; /* Color de h1 */
+}
+
+/* Estilos para los títulos h2 y h3 */
+h2{
+    color: white; /* Color de texto (aplicado en header) */
+    margin: 1rem; /* Margen exterior */
+    margin-top: 2rem;
+    font-family: "Delius Unicase", sans-serif;
+}
+
+h3{
+    color:#a11191; /* Color de texto */
+    margin: 2rem;
+}
+
+/* Estilo para los títulos h4 */
+h4{
+    color: black; /* Color de texto */
+}
+
+/*Estilo de las cards*/
+.cards-container{
+    display: flex; /* Habilita Flexbox para alinear los elementos hijos */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea si no caben */
+    gap: 1rem; /* Espacio entre las cards */
+    justify-content: center; /* Distribuye el espacio entre las cards */
+}
+
+/* Estilo individual de cada card */
+.card{
+    background: #a11191; /* Color de fondo */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 2px 5px black; /* Sombra para dar profundidad */
+    flex-basis: 100%; /* Ancho base de la card, ocupa el 100% en móvil */
+    padding: 1rem; /* Relleno interior */
+    text-align: center; /* Centra el contenido de la card */
+}
+.card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada al pasar el cursor */
+    transform: translateY(-5px); /* Efecto de elevación al pasar el cursor */
+    transition: all 0.3s ease; /* Suaviza la transición */
+}
+article{
+    margin: 10px;
+}
+
+/* Estilo de la imagen dentro de la card */
+.card img{
+    width: 100%; 
+    border-radius: 10px; /* Bordes redondeados para la imagen */
+}
+
+/* Margen para los títulos dentro de la card */
+.card h3, h4{
+    margin: 0.5rem 0;
+}
+
+/* Estilos para la página de login integrada */
+.login-container{display:flex;justify-content:center;padding:3rem 1rem;background:linear-gradient(180deg,#2a004a,#3a005e);}
+.login-card{background:linear-gradient(180deg,#ffffff,#f8f8ff);padding:2rem;border-radius:12px;max-width:420px;width:100%;box-shadow:0 8px 30px rgba(0,0,0,0.25);color:#1f1f1f}
+.login-card h2{text-align:center;margin-top:0;color:#a11191;font-family:"Delius Unicase",sans-serif}
+.login-card label{display:block;margin-top:12px;font-weight:600;color:#5b2b5b}
+.login-card input{width:100%;padding:10px 12px;border-radius:8px;border:1px solid #e6e0ed;margin-top:6px;font-size:15px}
+.password-wrap{display:flex;gap:8px}
+.password-wrap input{flex:1}
+#toggle-pw{background:#f1f6ff;border:1px solid #e6ecf6;padding:8px 10px;border-radius:8px;cursor:pointer}
+.actions{display:flex;justify-content:center;margin-top:18px}
+.actions button{background:#a11191;color:#fff;border:0;padding:10px 18px;border-radius:8px;cursor:pointer;font-weight:700}
+.login-card .error{color:#e03a3a;height:18px;margin-top:6px;font-size:13px}
+#form-message{margin-top:12px;font-size:14px;text-align:center}
+
+@media (max-width:600px){
+    .login-container{padding:2rem 0}
+    .login-card{margin:0 12px}
+}
+
+
+/* Media Query para pantallas más grandes (tablets/desktops pequeños) */
+@media (min-width: 700px) {
+    /* Las cards ocupan aproximadamente un tercio del contenedor */
+    .card {
+        flex-basis: 30%;
+    }
+}
+
+/*Mobile menu*/
+.menu{
+    display: flex; /* Habilita Flexbox para el menú */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+    justify-content: space-between; /* Distribuye el espacio entre los elementos */
+    align-items: center; /* Alinea verticalmente los elementos */
+}
+
+/* Orden de los elementos del menú en vista móvil */
+.toggle{
+    order: 1; /* El ícono de hamburguesa aparece primero (visualmente a la derecha por el justify-content) */
+}
+
+.item.button{
+    order: 2; /* Los botones de Log In/Sign Up van después */
+    color: #5f0074; /* Color de texto para los botones */
+}
+
+.item{
+    width: 100%; /* Los ítems del menú ocupan todo el ancho */
+    text-align: center; /* Centra el texto */
+    order: 3; /* Los ítems normales van al final */
+    display: none; /* Oculta los ítems por defecto */
+}
+
+/* Muestra los ítems del menú cuando el menú está activo (se hace clic en la hamburguesa) */
+.item.active{
+    display: block;
+}
+
+/*Tablet menu*/
+@media all and (min-width: 600px){
+    .menu {
+        justify-content: center; /* Centra los elementos del menú */
+    }
+
+    .logo {
+        flex: 1; /* El logo ocupa el espacio disponible a la izquierda */
+    }
+
+    .toggle {
+        flex: 1; /* El toggle ocupa el espacio disponible a la derecha */
+        text-align: right; /* Alinea el ícono a la derecha */
+    }
+
+    .item.button {
+        width: auto; /* El ancho de los botones es automático */
+        order: 1; /* Los botones se mueven antes del toggle */
+        display: block; /* Asegura que los botones sean visibles */
+    }
+
+    .toggle {
+        order: 2; /* El toggle ahora va después de los botones */
+    }
+
+    .button.secondary{
+        border: 0; /* Quita el borde inferior del botón secundario */
+    }
+
+    /* Estilos para los botones del menú en tablet */
+    .button a{
+        padding: 7.5px 15px;
+        background: #d90081;
+    }
+
+    .button.secondary a{
+        background: transparent; /* El botón secundario no tiene fondo */
+    }
+
+    /* Efecto hover para los botones */
+    .button a:hover{
+        text-decoration: none;
+        background: #a11191;
+        border-color: #a11191;
+    }
+
+    .button:not(.secondary) a:hover{
+        background: #a11191;
+        border-color: #a11191;
+    }
+
+    .button.secondary a:hover{
+        color: #ddd;
+    }
+}
+li{
+    font-family: "Delius", sans-serif;
+}
+/* Desktop menu*/
+@media all and (min-width: 900px) {
+    /* Muestra los ítems del menú como bloques en línea */
+    .item{
+        display: block;
+        width: auto;
+    }
+
+    /* Oculta el ícono de hamburguesa en pantallas grandes */
+    .toggle{
+        display: none;
+    }
+
+    /* Reordena los elementos para la vista de escritorio */
+    .logo{
+        order: 0;
+    }
+
+    .item{
+        order: 1;
+    }
+
+    .button{
+        order: 2; 
+    }
+
+    /* Ajusta el padding de los elementos del menú */
+    .menu li{
+        padding: 15px 10px;
+    }
+
+    .menu li.button{
+        padding-right: 0;
+    }
+}
+/*-------FINALIZA NAV BAR-----------*/
+/*Estilo del carrusel*/
+.carrusel{
+    position: relative;
+    width: 80%; /*Ajusta el ancho según necesites*/
+    max-width: 700px;
+    overflow: hidden; /*Oculta las imágenes que están fuera del viewport*/
+    margin: auto; /*Centra el carrusel*/
+}
+.carrusel:hover{
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada al pasar el cursor */
+    transform: translateY(-5px); /* Efecto de elevación al pasar el cursor */
+    transition: all 0.3s ease; /* Suaviza la transición */
+}
+.carrusel-inner{
+    display: flex; /*Coloca las imágenes en una fila*/
+    transition: transform 0.5s ease; /*Suaviza el movimiento*/
+}
+.slide{
+    position: relative;
+    min-width: 100%;
+}
+.slide img{
+    width: 100%; /*Asegura que las imágenes ocupen todo el ancho*/
+    display: block;
+}
+.overlay{
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 12px 20px;
+    border-radius: 8px;
+}
+.cta-btn{
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 8px;
+    padding: 8px 14px;
+    border-radius: 5px;
+    background: #f25c05;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+.prev,
+.next{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bolder;
+}
+.next{
+    right: 10px;
+}
+.prev{
+    left: 10px;
+}
+.slide h2{
+    color: #ddd;
+}
+/*-------Finaliza el carrousel-----------*/
+.redes-sociales {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3.5rem;
+}
+
+.redes-sociales a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.redes-sociales img {
+    border-radius: 50%;
+}
+.redes-sociales p {
+    color:#005959;
+}
+.redes-sociales img:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+/*Estilo página Blog*/
+/*Estilo de las cards*/
+.container-cards{
+    display: flex; /* Habilita Flexbox para alinear los elementos hijos */
+    flex-direction: column; /* Apila los elementos verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
+    gap: 3rem; /* Espacio entre las cards */
+    justify-content: center; /* Centra los elementos verticalmente si hay espacio extra */
+}
+
+/* Estilo individual de cada card */
+.cards-hor{
+    background: white; /* Color de fondo */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 2px 5px black; /* Sombra para dar profundidad */
+    flex-basis: 100%; /* Ancho base de la card, ocupa el 100% en móvil */
+    max-width: 600px; /* Ancho máximo para la card horizontal */
+    padding: 1rem; /* Relleno interior */
+    display: flex; /* Usamos flexbox para alinear imagen y texto */
+    align-items: center; /* Centra verticalmente los elementos */
+    gap: 1rem; /* Espacio entre la imagen y el texto */
+}
+
+.cards-hor img {
+    width: 150px; /* Ancho fijo para la imagen */
+    height: 150px; /* Alto fijo para la imagen */
+    object-fit: cover; /* Asegura que la imagen cubra el espacio sin deformarse */
+    border-radius: 10px; /* Bordes redondeados para la imagen */
+    flex-shrink: 0; /* Evita que la imagen se encoja */
+}
+.cards-hor:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada al pasar el cursor */
+    transform: translateY(-5px); /* Efecto de elevación al pasar el cursor */
+    transition: all 0.3s ease; /* Suaviza la transición */
+}
+
+.cards-hor .card-content {
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+article{
+    margin: 10px;
+}
+
+/* Estilo de la imagen dentro de la card */
+.card img{
+    width: 100%; 
+    border-radius: 10px; /* Bordes redondeados para la imagen */
+}
+
+/* Margen para los títulos dentro de la card */
+.card h3, h4{
+    margin: 0.5rem 0;
+}

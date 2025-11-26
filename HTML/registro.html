@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registro</title>
+    <link rel="stylesheet" href="../CSS/registro.css">
+</head>
+<!-- Form conecta al archivo php utilizado para enviar los datos -->
+<form name="form" action="../PHP/regis.php" method="post">
+
+<body>
+    <main class="auth-container">
+        <form action="../regi.php" name="bdl" method="post" class="auth-form" novalidate>
+          <!-- id="registerForm"  -->
+           <h1>Crear cuenta</h1>
+
+            <label for="r-username">Usuario</label>
+            <input id="r-username" name="username" type="text" autocomplete="username" required>
+            <div class="error" id="r-usernameError"></div>
+
+            <label for="r-email">Correo electrónico</label>
+            <input id="r-email" name="email" type="email" autocomplete="email" required>
+            <div class="error" id="r-emailError"></div>
+
+            <label for="r-clave">Contraseña</label>
+            <input id="r-clave" name="clave" type="clave" autocomplete="new-clave" required>
+            <div class="error" id="r-claveError"></div>
+
+            <label for="r-clave2">Confirmar contraseña</label>
+            <input id="r-clave2" name="clave2" type="clave" autocomplete="new-clave" required>
+            <div class="error" id="r-clave2Error"></div>
+            <div class="show-wrap">
+                <button type="button" id="toggleclaveReg" class="toggle-pass" aria-pressed="false" title="Mostrar contraseñas">
+                    <!-- ojo abierto SVG (por defecto) -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+                        <path fill="currentColor" d="M12 5c-7 0-11 7-11 7s4 7 11 7 11-7 11-7-4-7-11-7zm0 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/>
+                        <circle fill="currentColor" cx="12" cy="12" r="2.5"/>
+                    </svg>
+                </button>
+            </div>
+
+            <button type="submit" name="regist" class="btn">Registrarse</button>
+
+            <p class="small">¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
+
+            <div id="message" class="message" aria-live="polite"></div>
+        <!-- <input type="submit" name="regist"> -->
+        </form>
+    </main>
+    <script src="../JS/registro.js"></script>
+</body>
+</form>
+</html>
