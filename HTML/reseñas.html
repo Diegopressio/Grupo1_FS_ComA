@@ -1,0 +1,87 @@
+<!DOCTYPE html>  
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reseñas </title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comforter+Brush&family=Delius&family=Delius+Unicase:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header  class="hero">
+        <nav class="navbar">
+            <ul class="menu">
+                <li class="logo"><a href="../HTML/index.html"><img src="../imagenes/Cartonboxd.png" alt="Logo"></a></li>
+                <li class="item"><a href="../HTML/index.html">Inicio</a></li>
+                <li class="item"><a href="../HTML/sobremi.html">¿Quiénes somos?</a></li>
+                <li class="item"><a href="../HTML/reseñas.html" style="display: none;">Reseñas</a></li>
+                <li class="item"><a href="../HTML/contacto.html">Contacto</a></li>
+                <li id="authLinks" class="item auth">
+                    <a class="login-link" href="/HTML/login.html">Inicia sesión</a> 
+                    <a class="register-link" href="/HTML/registro.html">Regístrate</a>
+                </li>
+                
+                
+                </li>
+                <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
+            </ul>
+        </nav>
+
+        <div class="hero-text">
+            <h1>Cartonboxd</h1>
+            <p class="hero-sub">El mundo del consumo sin culpa, reseñas honestas y estética caótica hermosa.</p>
+            <a id="pp" href="../HTML/reseñas.html" class="hero-btn">Explorar reseñas</a>
+        </div>
+    </header>
+    
+<main>
+
+
+
+    <h2>Deja tu reseña</h2>
+    <form id="form-reseña">
+      <label for="pelicula">Selecciona una película:</label>
+      <select id="pelicula" required>
+        <option value="">--Selecciona--</option>
+        <option value="Inception">Inception</option>
+        <option value="Interstellar">Interstellar</option>
+        <option value="The Dark Knight">The Dark Knight</option>
+      </select>
+
+      <label for="comentario">Tu reseña:</label>
+      <textarea id="comentario" required></textarea>
+
+      <label for="puntuacion">Puntuación:</label>
+      <select id="puntuacion" required>
+        <option value="">--Selecciona--</option>
+        <option value="1">⭐</option>
+        <option value="2">⭐⭐</option>
+        <option value="3">⭐⭐⭐</option>
+        <option value="4">⭐⭐⭐⭐</option>
+        <option value="5">⭐⭐⭐⭐⭐</option>
+      </select>
+
+      <button type="submit">Enviar reseña</button>
+    </form>
+
+    <div class="reseñas" id="lista-reseñas">
+      <h2>Reseñas de usuarios</h2>
+      <!-- Aquí se mostrarán las reseñas -->
+    </div>
+  </main>
+<script src="../JS/auth.js" defer></script>
+  <script src="../JS/reseña.js" defer></script>
+
+
+</main>
+
+    <footer>
+        <p>© 2025 Cartonboxd</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../JS/listar.js" defer></script>
+</body>
+</html>

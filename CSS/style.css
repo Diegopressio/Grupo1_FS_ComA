@@ -1,0 +1,205 @@
+/* ==========================
+   STYLESHEET REDISEÑADO 2025
+   ========================== */
+
+/* Paleta principal */
+:root{
+    --bg-main:#28006b;
+    --bg-secondary:#44056b;
+    --nav-bg:#5f0074;
+    --accent:#d90081;
+    --accent2:#a11191;
+    --light:#ffffff;
+    --shadow:rgba(0,0,0,0.25);
+    --card:#3a005a;
+    --soft:#f2e7ff;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+    font-family:"Delius", sans-serif;
+    background:var(--bg-main);
+    color:var(--light);
+    line-height:1.6;
+}
+/*body { font-family: Arial, sans-serif; margin: 20px; } */
+    .pelicula { border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; }
+    .reseñas { margin-top: 10px; }
+    .reseña { border-top: 1px solid #ddd; padding: 5px 0; }
+    .form-reseña { margin-top: 10px; }
+    textarea { width: 100%; height: 60px; }
+    .puntuacion { margin-top: 5px; }
+/* ==========================
+   NAVBAR
+   ========================== */
+nav{
+    background:var(--nav-bg);
+    padding:12px 20px;
+    border-radius:14px;
+    margin:1rem auto 2rem auto;
+    max-width:1100px;
+    box-shadow:0 4px 14px var(--shadow);
+}
+.menu{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+}
+.menu li{
+    list-style:none;
+    padding:10px 12px;
+}
+.menu a{
+    color:var(--light);
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+    font-size: 20px;
+}
+.menu a:hover{
+    color:var(--accent);
+}
+.logo img{
+    height:70px;
+    filter:drop-shadow(0 2px 4px var(--shadow));
+}
+.login-link {margin-right: 20px; 
+}
+.toggle{display:none}
+
+/* ==========================
+   HERO SECTION
+   ========================== */
+.hero{
+    background:linear-gradient(180deg,var(--bg-secondary),var(--bg-main) 60%);
+    padding:4rem 1.5rem;
+    text-align:center;
+}
+.hero-text h1{
+    font-family:"Comforter Brush";
+    font-size:4rem;
+    color:var(--accent);
+}
+.hero-sub{
+    font-size:1.2rem;
+    max-width:600px;
+    margin:1rem auto;
+    color:var(--soft);
+}
+.hero-btn{
+    display:inline-block;
+    background:var(--accent);
+    padding:12px 22px;
+    margin-top:1rem;
+    color:white;
+    border-radius:10px;
+    font-weight:bold;
+    transition:0.3s;
+}
+.hero-btn:hover{background:var(--accent2)}
+
+/* ==========================
+   MAIN
+   ========================== */
+main{
+    max-width:1100px;
+    margin:auto;
+    padding:2rem 1rem;
+    text-align:center;
+}
+section{margin:3rem 0}
+
+/* ==========================
+   CAROUSEL
+   ========================== */
+.carrusel{
+    width:85%;
+    max-width:750px;
+    margin:auto;
+    overflow:hidden;
+    border-radius:14px;
+    box-shadow:0 4px 14px var(--shadow);
+    transition:0.3s;
+}
+.carrusel:hover{transform:translateY(-6px)}
+.carrusel-inner{
+    display:flex;
+    transition:transform 0.5s ease;
+}
+.slide{position:relative;min-width:100%}
+.slide img{width:100%;display:block}
+.overlay{
+    position:absolute;
+    bottom:20px;
+    left:25px;
+    background:rgba(0,0,0,0.55);
+    padding:1rem 1.5rem;
+    border-radius:10px;
+}
+.cta-btn{
+    background:var(--accent);
+    padding:8px 16px;
+    border-radius:6px;
+    color:white;
+    font-weight:bold;
+    display:inline-block;
+    margin-top:8px;
+}
+.cta-btn:hover{background:var(--accent2)}
+.prev,.next{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:rgba(0,0,0,0.45);
+    padding:12px;
+    border:none;
+    border-radius:6px;
+    color:white;
+    cursor:pointer;
+}
+.prev{left:10px}
+.next{right:10px}
+
+/* ==========================
+   CARDS
+   ========================== */
+.cards-container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:2rem;
+}
+.card{
+    background:var(--accent2);
+    border-radius:14px;
+    padding:1rem;
+    width:100%;
+    max-width:300px;
+    box-shadow:0 4px 14px var(--shadow);
+    transition:0.3s;
+}
+.card:hover{transform:translateY(-6px)}
+.card img{
+    width:100%;
+    border-radius:10px;
+    margin-bottom:0.5rem;
+}
+.card h4{color:white;margin:0.5rem 0}
+
+/* ==========================
+   FOOTER
+   ========================== */
+footer{
+    background:var(--bg-secondary);
+    text-align:center;
+    padding:1.5rem;
+    margin-top:3rem;
+    color:var(--soft);
+}
+
+/* ==========================
+   RESPONSIVE NAV
+   ========================== */
+@media(max-width:900px){.toggle{display:block}.item{display:none}.item.active{display:block}}
