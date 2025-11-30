@@ -11,12 +11,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Comforter+Brush&family=Delius&family=Delius+Unicase:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <script>
+    // Si el servidor redirige con ?user=nombre, guardarlo en localStorage temprano
+    (function(){
+        try{
+            var params = new URLSearchParams(window.location.search);
+            if(params.has('user')){
+                var u = params.get('user');
+                if(u){
+                    localStorage.setItem('currentUser', JSON.stringify({ username: decodeURIComponent(u) }));
+                }
+                var clean = window.location.pathname + window.location.hash;
+                history.replaceState(null, '', clean);
+            }
+        }catch(e){}
+    })();
+    </script>
     <header  class="hero">
         <nav class="navbar">
             <ul class="menu">
                 <li class="logo"><a href="../HTML/index.html"><img src="../imagenes/Cartonboxd.png" alt="Logo"></a></li>
                 <li class="item"><a href="../HTML/index.html">Inicio</a></li>
-                <li class="item"><a href="../HTML/sobremi.html">¿Quiénes somos?</a></li>
+                <li class="item"><a href="../HTML/somos.html">¿Quiénes somos?</a></li>
                 <li class="item"><a href="../HTML/reseñas.html" style="display: none;">Reseñas</a></li>
                 <li class="item"><a href="../HTML/contacto.html">Contacto</a></li>
                 <li id="authLinks" class="item auth">
@@ -38,40 +54,44 @@
     </header>
     
 <main>
+    <div id="auth-message" style="display:none; padding: 5px; background-color: #f0ad4e; color: white; border-radius: 5px; margin: 130px;">
+        <p>Debes <a href="../HTML/login.html" style="color: white; text-decoration: underline;">iniciar sesión</a> para dejar una reseña.</p>
+    </div>
 
+    <div id="form-container">
+        <h2>Deja tu reseña</h2>
+        <div id="usuario-actual" style="margin-bottom: 10px; font-weight: bold; color: #666;"></div>
+        <form id="form-reseña">
+            <label for="pelicula">Selecciona una película:</label>
+            <select id="pelicula" required>
+                <option value="">--Selecciona--</option>
+                <option value="Los Juegos del Hambre">Los Juegos del Hambre</option>
+                <option value="Harry Potter">Harry Potter</option>
+                <option value="Viernes 13">Viernes 13</option>
+            </select>
 
+            <label for="comentario">Tu reseña:</label>
+            <textarea id="comentario" required></textarea>
 
-    <h2>Deja tu reseña</h2>
-    <form id="form-reseña">
-      <label for="pelicula">Selecciona una película:</label>
-      <select id="pelicula" required>
-        <option value="">--Selecciona--</option>
-        <option value="Inception">Inception</option>
-        <option value="Interstellar">Interstellar</option>
-        <option value="The Dark Knight">The Dark Knight</option>
-      </select>
+            <label for="puntuacion">Puntuación:</label>
+            <select id="puntuacion" required>
+                <option value="">--Selecciona--</option>
+                <option value="1">⭐</option>
+                <option value="2">⭐⭐</option>
+                <option value="3">⭐⭐⭐</option>
+                <option value="4">⭐⭐⭐⭐</option>
+                <option value="5">⭐⭐⭐⭐⭐</option>
+            </select>
 
-      <label for="comentario">Tu reseña:</label>
-      <textarea id="comentario" required></textarea>
-
-      <label for="puntuacion">Puntuación:</label>
-      <select id="puntuacion" required>
-        <option value="">--Selecciona--</option>
-        <option value="1">⭐</option>
-        <option value="2">⭐⭐</option>
-        <option value="3">⭐⭐⭐</option>
-        <option value="4">⭐⭐⭐⭐</option>
-        <option value="5">⭐⭐⭐⭐⭐</option>
-      </select>
-
-      <button type="submit">Enviar reseña</button>
-    </form>
+            <button type="submit">Enviar reseña</button>
+        </form>
+    </div>
 
     <div class="reseñas" id="lista-reseñas">
-      <h2>Reseñas de usuarios</h2>
-      <!-- Aquí se mostrarán las reseñas -->
+        <h2>Reseñas de usuarios</h2>
+        <!-- Aquí se mostrarán las reseñas -->
     </div>
-  </main>
+</main>
 <script src="../JS/auth.js" defer></script>
   <script src="../JS/reseña.js" defer></script>
 

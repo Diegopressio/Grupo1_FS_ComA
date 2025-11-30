@@ -15,16 +15,31 @@ if(isset($_POST['ingresar'])) {
 
         
     $sql=$conectar->query("SELECT * FROM datos WHERE Usuario='$username' and contraseña='$password'") ;
-    
-    
-if ($datos=$sql->fetch_object()) {
-        header("Location: /PRUEBA/HTML/index.html");
-         echo '<li> <style> .item { display:flex; } </style> </li>';
-        exit();
+
+    $isAjax = false;
+    if (isset($_POST['ajax']) && $_POST['ajax'] == '1') $isAjax = true;
+    if (isset($_SERVER['HTTP_ACCEPT']) && strpos($_SERVER['HTTP_ACCEPT'], 'application/json') !== false) $isAjax = true;
+
+    if ($datos=$sql->fetch_object()) {
+        if ($isAjax) {
+            header('Content-Type: application/json; charset=utf-8');
+            echo json_encode(['success' => true, 'user' => $username]);
+            exit();
+        } else {
+            // Redirect to index (non-AJAX fallback)
+            $safeUser = urlencode($username);
+            header("Location: /PRUEBA/HTML/index.html?user=$safeUser");
+            exit();
+        }
     } else {
-        header("Location: /PRUEBA/HTML/login.html");
-        exit();
-        
+        if ($isAjax) {
+            header('Content-Type: application/json; charset=utf-8');
+            echo json_encode(['success' => false, 'message' => 'Usuario o contraseña incorrectos']);
+            exit();
+        } else {
+            header("Location: /PRUEBA/HTML/login.html");
+            exit();
+        }
     }
 /* 
     if($datos=$sql->fetch_object()) {

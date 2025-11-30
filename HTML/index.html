@@ -11,21 +11,36 @@
     <link href="https://fonts.googleapis.com/css2?family=Comforter+Brush&family=Delius&family=Delius+Unicase:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <script>
+    // Si el servidor redirige con ?user=nombre, guardarlo en localStorage temprano
+    (function(){
+        try{
+            var params = new URLSearchParams(window.location.search);
+            if(params.has('user')){
+                var u = params.get('user');
+                if(u){
+                    localStorage.setItem('currentUser', JSON.stringify({ username: decodeURIComponent(u) }));
+                }
+                var clean = window.location.pathname + window.location.hash;
+                history.replaceState(null, '', clean);
+            }
+        }catch(e){}
+    })();
+    </script>
     <header  class="hero">
         <nav class="navbar">
             <ul class="menu">
-                <li class="logo"><a href="../HTML/index.html"><img src="../imagenes/Cartonboxd.png" alt="Logo"></a></li>
-                <li class="item"><a href="../HTML/index.html">Inicio</a></li>
-                <li class="item"><a href="../HTML/sobremi.html">¿Quiénes somos?</a></li>
-                <li class="item"><a href="../HTML/reseñas.html" style="display: none;">Reseñas</a></li>
-                <li class="item"><a href="../HTML/contacto.html">Contacto</a></li>
+                <li class="logo"><a href="index.html"><img src="../imagenes/Cartonboxd.png" alt="Logo"></a></li>
+                <li class="item"><a href="index.html">Inicio</a></li>
+                <li class="item"><a href="somos.html">¿Quiénes somos?</a></li>
+                <!-- <li class="item"><a href="reseñas.html" style="display: none;">Reseñas</a></li> -->
+                <li class="item"><a href="contacto.html">Contacto</a></li>
                 <li id="authLinks" class="item auth">
-                    <a class="login-link" href="/HTML/login.html">Inicia sesión</a> 
-                    <a class="register-link" href="/HTML/registro.html">Regístrate</a>
+                    <a class="login-link" href="login.html">Inicia sesión</a> 
+                    <a class="register-link" href="registro.html">Regístrate</a>
                 </li>
                 
                 
-            </li>
                 <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
             </ul>
         </nav>
@@ -39,31 +54,31 @@
 
     <main>
         <section class="seccion">
-            <h3>Últimas vistas</h3> <br> <br>
+            <h3>Últimas vistas</h3> <br>
             <div class="carrusel">
                 <div class="carrusel-inner">
                     <div class="slide">
-                        <img src="/imagenes/ChatGPT_Image_4_nov_2025__11_02_00_a.m.-removebg-preview.png" alt="Imagen 1">
+                        <img src="../imagenes/Hambre.jpg" alt="Pelicula Los Juegos del Hambre">
                         <div class="overlay">
                             <h2>Los Juegos del Hambre</h2>
                             <p>Mi serie distópica favorita: contraste visual, crítica social y revolución.</p>
-                            <a href="/imagenes/1.jpg" class="cta-btn">Saber más</a>
+                            <a href="https://letterboxd.com/film/the-hunger-games-catching-fire/" class="cta-btn">Saber más</a>
                         </div>
                     </div>
                     <div class="slide">
-                        <img src="/imagenes/3.jpg" alt="Imagen 2">
+                        <img src="../imagenes/3.jpg" alt="Pelicula Harry Potter">
                         <div class="overlay">
-                            <h2>Ideología y símbolo</h2>
+                            <h2>Harry Potter</h2>
                             <p>La obra modela un símbolo de desafío — el Sinsajo — motor de rebelión.</p>
-                            <a href="https://letterboxd.com/film/the-hunger-games-catching-fire/" class="cta-btn">Conocer</a>
+                            <a href="https://letterboxd.com/film/harry-potter-and-the-philosophers-stone/" class="cta-btn">Conocer</a>
                         </div>
                     </div>
                     <div class="slide">
-                        <img src="/imagenes/6.jpg" alt="Imagen 3">
+                        <img src="../imagenes/6.jpg" alt="Pelicula Viernes 13">
                         <div class="overlay">
-                            <h2>El verdadero enemigo</h2>
+                            <h2>Viernes 13</h2>
                             <p>Ya no es sobrevivir: es derrocar al sistema que los oprime.</p>
-                            <a href="https://letterboxd.com/film/the-hunger-games-mockingjay-part-1/" class="cta-btn">Ver más</a>
+                            <a href="https://letterboxd.com/film/friday-the-13th-the-final-chapter/" class="cta-btn">Ver más</a>
                         </div>
                     </div>
                 </div>
@@ -73,7 +88,8 @@
         </section>
 
         <section class="cards-seccion">
-            <h3>Estética de vida real</h3>
+            <h3>Estética de vida real</h3> 
+            <br>
             <div class="cards-container">
                 <article class="card">
                     <img src="../Imágenes/Un monton.jpg" alt="Responsive Design">
@@ -99,7 +115,7 @@
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="../JS/listar.js" defer></script>
+    <!-- <script src="../JS/listar.js" defer></script> -->
     <script src="../JS/carrusel.js" defer></script>
     <script src="../JS/auth.js" defer></script>
 </body>

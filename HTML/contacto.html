@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cartonboxd</title>
+    <title>Contacto - Cartonboxd</title>
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,39 +11,54 @@
     <link href="https://fonts.googleapis.com/css2?family=Comforter+Brush&family=Delius&family=Delius+Unicase:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>Cartonboxd</h1>
-        <nav>
+    <header class="hero">
+        <nav class="navbar">
             <ul class="menu">
-                <li class="logo"><a href="../HTML/index.html"><img src="../Imágenes/logo.png" alt=""></a></li>
-                <li class="item"><a href="../HTML/index.html">Inicio</a></li>
-                <li class="item"><a href="../HTML/sobremi.html">¿Quiénes somos?</a></li>
-                <li class="item"><a href="../HTML/blog.html">Reseñas</a></li>
-                <li class="item"><a href="../HTML/contacto.html">Contacto</a></li>
-                <li class="item button"><a href="#">Inicia sesión</a></li>
-                <li class="item button secondary"><a href="#">Registrate</a></li>
+                <li class="logo"><a href="index.html"><img src="../imagenes/Cartonboxd.png" alt="Logo"></a></li>
+                <li class="item"><a href="index.html">Inicio</a></li>
+                <li class="item"><a href="somos.html">¿Quiénes somos?</a></li>
+                <li class="item"><a href="reseñas.html">Reseñas</a></li>
+                <li class="item"><a href="contacto.html">Contacto</a></li>
+                <li id="authLinks" class="item auth">
+                    <a class="login-link" href="login.html">Inicia sesión</a> 
+                    <a class="register-link" href="registro.html">Regístrate</a>
+                </li>
                 <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
             </ul>
         </nav>
-        <h2>¡Sean bienvenidos al mundo del consumo sin culpa!</h2>
-    </header>  
+    </header>
+
+    <div class="contacto-hero">
+        <h2>Ponte en contacto con nosotros</h2>
+        <p>¿Tienes preguntas o sugerencias? Nos encantaría saber de ti.</p>
+    </div>
+
     <main>
         <section class="contacto">
-            <h3>Mis redes sociales</h3>
-            <div class="redes-sociales">
-                <a href="https://www.facebook.com/sofledda/"><img src="../Imágenes/Facebook.jpg" alt="Perfil personal en Facebook"><p>Facebook</p></a>
-                <a href="https://www.instagram.com/sofledda"><img src="../Imágenes/Instagram.jpg" alt="Perfil personal en Instagram"><p>Instagram personal</p></a>
-                <a href="https://x.com/sofledda"><img src="../Imágenes/Twitter.jpg" alt="Perfil personal en Twitter"><p>Twitter</p></a>
-                <a href="https://www.linkedin.com/in/sofia-ledda-garces/"><img src="../Imágenes/LinkedIn.jpeg" alt="Perfil personal en Linkedin"><p>LinkedIn</p></a>
-                <a href="https://www.instagram.com/sofledda.jpg/"><img src="../Imágenes/InstagramRecreativo.jpg" alt="Perfil (re)creativo en Instagram"><p>Instagram (re)creativo</p></a>
-                <a href="https://letterboxd.com/sofiawho/"><img src="../Imágenes/Letterboxd.jpg" alt="Perfil de Letterboxd"><p>Letterboxd</p></a>
-            </div>
+            <h3>Contacto</h3>
+            <form action="../contac.php" name="contactoForm" method="post">
+                <ul>
+                    <li>
+                        <label for="name">Nombre de usuario:</label>
+                        <input type="text" id="name" name="user_name" placeholder="Tu nombre" required />
+                    </li>
+                    <li>
+                        <label for="msg">Mensaje:</label>
+                        <textarea id="msg" name="user_message" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                    </li>
+                    <li>
+                        <button type="submit" name="envia">Enviar Mensaje</button>
+                    </li>
+                </ul>
+            </form>
         </section>
     </main>
+
     <footer>
-        <p>© 2025 Cartonboxd</p>
+        <p>© 2025 Cartonboxd — Hecho con caos y cariño</p>
     </footer>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="../JS/listar.js" defer></script>
+    <script src="../JS/auth.js" defer></script>
 </body>
 </html>
