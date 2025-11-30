@@ -11,22 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Comforter+Brush&family=Delius&family=Delius+Unicase:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <script>
-    // Si el servidor redirige con ?user=nombre, guardarlo en localStorage temprano
-    (function(){
-        try{
-            var params = new URLSearchParams(window.location.search);
-            if(params.has('user')){
-                var u = params.get('user');
-                if(u){
-                    localStorage.setItem('currentUser', JSON.stringify({ username: decodeURIComponent(u) }));
-                }
-                var clean = window.location.pathname + window.location.hash;
-                history.replaceState(null, '', clean);
-            }
-        }catch(e){}
-    })();
-    </script>
+    <script src="../JS/userlocal.js" defer></script>
     <header  class="hero">
         <nav class="navbar">
             <ul class="menu">
